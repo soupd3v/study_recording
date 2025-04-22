@@ -1,0 +1,8 @@
+streamlit
+sounddevice
+numpy
+openai-whisper
+google-generativeai
+fpdf
+torch  # Necessário para o Whisper funcionar
+
