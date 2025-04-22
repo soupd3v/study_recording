@@ -9,7 +9,9 @@ import os
 import uuid
 from datetime import datetime
 from typing import Optional
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
 st.set_page_config(page_title="Transcrição de Aula com Gemini", layout="wide")
@@ -17,7 +19,7 @@ st.set_page_config(page_title="Transcrição de Aula com Gemini", layout="wide")
 # --- Configuration ---
 
 # 1. API Key (Using Environment Variable)
-gemini_api_key = 'AIzaSyCk1DipP7yvFE52g8R9c2mVRX9mIv1kRtY' # Read from environment variable
+gemini_api_key = os.getenv('GEMINI_API_KEY') # Read from environment variable
 
 if not gemini_api_key:
     st.error("❗️ Erro: Variável de ambiente 'GEMINI_API_KEY' não encontrada.")
